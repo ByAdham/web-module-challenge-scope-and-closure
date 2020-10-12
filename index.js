@@ -1,4 +1,4 @@
-// ⭐️ Example Challenge START ⭐️
+  // ⭐️ Example Challenge START ⭐️
 
 /**
  * ### Challenge `processFirstItem`
@@ -52,15 +52,15 @@ function counter2() {
 }
 
 
-/* Task 2: inning() 
-
+/*Task 2
 Write a function called `inning` that returns a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
-
-    /*Code Here*/
-
+function inning(){
+  let inningScore;
+  inningScore = Math.round((Math.random())*2);
+  return inningScore;
 }
+console.log(inning());
 
 /* Task 3: finalScore()
 
@@ -74,13 +74,28 @@ finalScore(inning, 9) might return:
   "Away": 5,
 }
 
-*/ 
+// */ 
 
-function finalScore(/*code Here*/){
-
-  /*Code Here*/
-
+function finalScore(generatorFunc, numInnings){
+  //Define a score board object to store final scores of each team as properties
+  let bothTeamsScore = {};
+  
+  
+  //Generate random score for each team based on number of innings parameter
+  function singleTeamPlay () {
+  //Define an iterable variable for a single team's randomy generated score
+    let singleTeamScore = 0;
+    for (let i=0; i<numInnings; i++){
+      singleTeamScore += generatorFunc();
+    }
+    return singleTeamScore;
+  }
+  //Place randomy generated numbers in the score board object
+  bothTeamsScore.Home = singleTeamPlay();
+  bothTeamsScore.Away = singleTeamPlay();
+  return bothTeamsScore;
 }
+console.log(finalScore(inning, 9));
 
 /* Task 4: 
 
