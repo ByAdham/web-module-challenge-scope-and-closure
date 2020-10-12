@@ -42,7 +42,12 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+Closure is the combination of a function and its surrounding lexical environment i.e. when a function is nested in another function and as access to its variables
+
 2. Study the following code, then answer the questions below.
+a. Closure is used on the second line where the return is an inner function, a closure
+b. What is the same is the name Dan and what changes is the random number generated i.e. newRoll's value
+c. Local to the function personalDice and the annonymous function stored in newRoll
 
 ```js
 function personalDice(name){
